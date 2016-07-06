@@ -1,20 +1,20 @@
 # leaflet.ScaleFactor
-Display a Scale Factor (1:50,000) for Leaflet maps, checkout the [Demo](https://marcchasse.github.io/leaflet.ScaleFactor/)
+Display a Scale Factor (e.g. 1:50,000) for Leaflet maps, checkout the [Demo](https://marcchasse.github.io/leaflet.ScaleFactor/).
 
-
-Leaflet.ScaleFactor is based on [Leaflet's Control.Scale](http://leafletjs.com/reference.html#control-scale) and works with the latest version of Leaflet, [1.0.0-rc1](http://leafletjs.com/reference-1.0.0.html) it also likely works with older versions. Jquery 1.0 or higher is required, only the [`.height()`](http://api.jquery.com/height/) function is being used a pure JavaScript alternative would be better
+Leaflet.ScaleFactor is based on [Leaflet's Control.Scale](http://leafletjs.com/reference.html#control-scale) and works with the latest version of Leaflet, [1.0.0-rc1](http://leafletjs.com/reference-1.0.0.html) it also likely works with older versions. Jquery 1.0 or higher is required for its [`.height()`](http://api.jquery.com/height/) function. A pure JavaScript alternative would be better but i'm not sure how to go about implementing that.
 
 The calculation to determine the scale factor is approximate and could likely be improved further, as of right now its calculated as follows.
+
 1. Find half the map height in pixels (middle of map)
-2. Get Leaflet to determine the lat/log of (0,middle of map)
-3. Get Leaflet to determine the lat/log of (100,middle of map), 100px over
+2. Get Leaflet to determine the lat/long of (0,middle of map)
+3. Get Leaflet to determine the lat/long of (100,middle of map)
 4. Get Leaflet to calculate the real world distance in meters between the two points.
 5. Get the pixels per physical screen millimeter
-	a. Add a div with height:1mm; to the page
-	b. Get jQuery to return the calculated height in pixels
+  1. Add a div with height:1mm; to the page
+  2. Get jQuery to return the calculated height in pixels
 6. Multiply 100px by the pixels/mm
 7. Convert physical screen size of 100px from milimeters to meters
-8. Divide real world meter per 100px by screen meters per 100px
+8. Divide real world meters per 100px by screen meters per 100px
 9. Format and display the scale
 
 
@@ -27,7 +27,7 @@ The calculation to determine the scale factor is approximate and could likely be
     ```html
     <link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.css">
     <script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script>
-	<script src="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.js"></script>
+    <script src="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.js"></script>
     ```
 3. Add the ScaleFactor control:
     ```javascript
