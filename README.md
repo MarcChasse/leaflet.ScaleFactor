@@ -26,7 +26,7 @@ The calculation to determine the scale factor is approximate and could likely be
 
     ```html
     <link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.css">
-    <script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.0.0/dist/jquery.min.js"></script>
     <script src="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.js"></script>
     ```
 3. Add the ScaleFactor control:
@@ -42,14 +42,14 @@ Here is everything you need to get this up and running. Copy and past the follow
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>Leaflet.ScaleFactor DEMO</title>
-	<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.1/dist/leaflet.css" />
 	<link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.css">
 	<style>html,body{margin:0;}#map{width:100vw;height:100vh;}</style>
 </head>
 <body>
 	<div id="map"></div>
-	<script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script>
-	<script src="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/jquery@3.0.0/dist/jquery.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.0.0-rc.1/dist/leaflet.js"></script>
 	<script src="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.js"></script>
 	<script>
 	    osm = new L.TileLayer(
