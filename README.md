@@ -1,7 +1,7 @@
 # leaflet.ScaleFactor
 Display a Scale Factor (e.g. 1:50,000) for Leaflet maps, checkout the [Demo](https://marcchasse.github.io/leaflet.ScaleFactor/).
 
-Leaflet.ScaleFactor is based on [Leaflet's Control.Scale](http://leafletjs.com/reference.html#control-scale) and works with the latest version of Leaflet, [1.0.0-rc1](http://leafletjs.com/reference-1.0.0.html) it also likely works with older versions. Jquery 1.0 or higher is required for its [`.height()`](http://api.jquery.com/height/) function. A pure JavaScript alternative would be better but i'm not sure how to go about implementing that.
+Leaflet.ScaleFactor is based on [Leaflet's Control.Scale](http://leafletjs.com/reference.html#control-scale) and works with the latest version of Leaflet, [1.0.0-rc1](http://leafletjs.com/reference-1.0.0.html) it also likely works with older versions.
 
 The calculation to determine the scale factor is approximate and could likely be improved further, as of right now its calculated as follows.
 
@@ -11,7 +11,7 @@ The calculation to determine the scale factor is approximate and could likely be
 4. Get Leaflet to calculate the real world distance in meters between the two points.
 5. Get the pixels per physical screen millimeter
   1. Add a div with height:1mm; to the page
-  2. Get jQuery to return the calculated height in pixels
+  2. Get calculated height in pixels by returning browser native `offsetHeight` attribute
 6. Multiply 100px by the pixels/mm
 7. Convert physical screen size of 100px from milimeters to meters
 8. Divide real world meters per 100px by screen meters per 100px
@@ -22,11 +22,10 @@ The calculation to determine the scale factor is approximate and could likely be
 
 1. Create a leaflet map. Checkout Leaflets [Quick Start Guide](http://leafletjs.com/examples/quick-start.html) for a basic map example.
 
-2. Include jQuery, Leaflet.ScaleFactor.min.css and Leaflet.ScaleFactor.min.js
+2. Include Leaflet.ScaleFactor.min.css and Leaflet.ScaleFactor.min.js
 
     ```html
     <link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.css">
-    <script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script>
     <script src="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.js"></script>
     ```
 3. Add the ScaleFactor control:
@@ -48,7 +47,6 @@ Here is everything you need to get this up and running. Copy and past the follow
 </head>
 <body>
 	<div id="map"></div>
-	<script src="https://npmcdn.com/jquery@3.0.0/dist/jquery.min.js"></script>
 	<script src="https://npmcdn.com/leaflet@1.0.0-rc.1/dist/leaflet.js"></script>
 	<script src="https://rawgit.com/MarcChasse/leaflet.ScaleFactor/master/leaflet.scalefactor.min.js"></script>
 	<script>
