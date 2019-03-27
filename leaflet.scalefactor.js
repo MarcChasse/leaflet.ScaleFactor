@@ -42,12 +42,12 @@
 
         _pxTOmm: (function () {
             var heightRef = document.createElement('div');
-            heightRef.style = 'height:1mm;display:none';
+            heightRef.style = 'height:1mm;visibility:hidden';
             heightRef.id = 'heightRef';
             document.body.appendChild(heightRef);
 
             heightRef = document.getElementById('heightRef');
-            var pxPermm = $('#heightRef').height();
+            var pxPermm = heightRef.offsetHeight;
 
             heightRef.parentNode.removeChild(heightRef);
 
