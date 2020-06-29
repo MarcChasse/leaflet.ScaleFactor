@@ -77,3 +77,5 @@ Checkout the [Demo](https://marcchasse.github.io/leaflet.ScaleFactor/)
 |----------------|---------|--------------|-------------------------------------------------------------------------------------------------|
 | position       | String  | 'bottomleft' | The position of the control (one of the map corners). See control positions.                    |
 | updateWhenIdle | Boolean | false        | If true, the control is updated on moveend, otherwise it's always up-to-date (updated on move). |
+| thousand_separator | String |    ","    | The thousand separator. |
+| scale_separator | String |    ":"       | The scale separator. |
