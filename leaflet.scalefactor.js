@@ -20,7 +20,9 @@
     var ScaleFactor = L.Control.extend({
         options: {
             position: 'bottomleft',
-            updateWhenIdle: true
+            updateWhenIdle: true,
+            thousand_separator: ",",
+            scale_separator: ':'
         },
 
         onAdd: function (map) {
@@ -71,7 +73,8 @@
             var scaleFactor = RealWorlMetersPer100Pixels / ScreenMetersPer100Pixels;
 
             //.replace formats the scale with commas 50000 -> 50,000
-            this._mScale.innerHTML = '1:' + Math.round(scaleFactor).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            this._mScale.innerHTML = '1' + this.options.scale_separator 
+            + Math.round(scaleFactor).toString().replace(/\B(?=(\d{3})+(?!\d))/g, this.options.thousand_separator);
         }
 
     });
